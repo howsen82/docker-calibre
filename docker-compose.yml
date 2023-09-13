@@ -1,5 +1,7 @@
 version: '3.9'
 
+# Default admin login: Username: admin Password: admin123
+
 services:
   calibre:
     container_name: calibre
