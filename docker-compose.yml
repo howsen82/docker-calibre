@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  calibre:
+    container_name: calibre
+    image: lscr.io/linuxserver/calibre-web
+    environment:
+      - PUID=1026
+      - PGID=100
+      - TZ=Asia/Kuching
+      - DOCKER_MODS=ghcr.io/linuxserver/mods:universal-calibre
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1
+    volumes:
+      - /data/calibre/config:/config
+      - /data/calibre/media/books:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped
+    
